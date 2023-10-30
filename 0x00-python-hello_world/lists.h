@@ -1,22 +1,27 @@
 #ifndef LISTS_H
 #define LISTS_H
+
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 /**
- * struct nohde - A singly-linked list node structure.
- * @m: An integer data element.
- * @next: A pointer to the next node in the list.
+ * struct listint_s - singly linked list
+ * @n: integer
+ * @next: points to the next node
+ *
+ * Description: singly linked list node structure
+ * 
  */
-typedef struct nohde
+typedef struct listint_s
 {
-	int m;
-	struct nohde *next;
-} LinkedListNode;
+    int n;
+    struct listint_s *next;
+} listint_t;
 
-size_t print_listint(const LinkedListNode *h);
-LinkedListNode *add_nodeint(LinkedListNode **head, const int m);
-void free_listint(LinkedListNode *head);
-int check_cycle(LinkedListNode *list);
+size_t print_listint(const listint_t *h);
+listint_t *add_nodeint(listint_t **head, const int n);
+void free_listint(listint_t *head);
+int check_cycle(listint_t *list);
 
-#endif
-
+#endif /* LISTS_H */

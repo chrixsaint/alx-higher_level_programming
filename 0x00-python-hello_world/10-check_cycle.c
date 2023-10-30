@@ -6,15 +6,13 @@
  * Return: 0 if there is no cycle, 1 if there is a cycle
  */
 
-int check_cycle(LinkedListNode *t)
+int check_cycle(listint_t *t)
 {
-    LinkedListNode *fast;
-	LinkedListNode *current;
+	listint_t *current;
+	listint_t *fast;
 
 	if (t == NULL || t->next == NULL)
-    {
-        return (0);
-    }
+		return (0);
 
 	current = t;
 	fast = t;
@@ -25,9 +23,7 @@ int check_cycle(LinkedListNode *t)
 		fast = fast->next->next;
 
 		if (current == fast)
-        {
-            return (1);
-        }
+			return (1);
 	}
 	return (0);
 }
