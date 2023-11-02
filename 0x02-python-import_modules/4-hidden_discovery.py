@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
+if _name_ == "_main_":
     import hidden_4
-    import sys
-    atts = dir(hidden_4)
-    for att in atts:
-        if att[0] != '_':
-            print(att)
 
+    names = dir(hidden_4)
+    for name in sorted(names):
+        if not name.startswith("__"):
+            print(name)
