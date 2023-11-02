@@ -9,3 +9,4 @@ if __name__ == "__main__":
     div = calc.div(a, b)
     print("{} + {} = {}\n{} - {} = {}".format(a, b, add, a, b, sub))
     print("{} * {} = {}\n{} / {} = {}".format(a, b, mul, a, b, div))
+
