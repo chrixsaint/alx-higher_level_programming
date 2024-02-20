@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""  lists all states from the database hbtn_0e_0_usa """
+"""  lists all states from the database hbtn_0e_0_usa
+this will not allow malicious sql injection """
 import MySQLdb
 import sys
 
@@ -9,7 +10,8 @@ if __name__ == "__main__":
                          passwd=sys.argv[2], db=sys.argv[3], port=3306)
     cur = db.cursor()
     match = sys.argv[4]
-    cur.execute("SELECT * FROM states WHERE name LIKE %s", (match, ))
+    q = "SELECT * FROM states WHERE name LIKE %s"
+    cur.execute(q, (match, ))
     rows = cur.fetchall()
     for row in rows:
         print(row)
